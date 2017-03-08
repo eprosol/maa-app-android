@@ -22,11 +22,14 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         document.addEventListener('deviceready', function () {
           // Enable to debug issues.
-          // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-          
+          window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+          // OneSignal.setLogLevel(OneSignal.LOG_LEVEL.DEBUG, OneSignal.LOG_LEVEL.DEBUG);
+
           var notificationOpenedCallback = function(jsonData) {
             console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
           };
+
+
 
           window.plugins.OneSignal
             .startInit("eb943e26-cb98-47aa-bdd2-a2a843adb945")
