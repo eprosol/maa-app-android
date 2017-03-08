@@ -27,7 +27,9 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+        console.log("Waqas! Device is ready");
+        var ref = window.open('http://local.muslimaid.org.au', '_blank', 'location=no,toolbar=no');
+//        this.receivedEvent('deviceready');
 //        this.launch("https://www.muslimaid.org.au");
     },
 
@@ -47,7 +49,8 @@ var app = {
           navigator.notification.alert('An internet connection is required to continue');
         } else {
 //            window.open('http://muslimaid.org.au', '_blank', 'location=no');            
-            window.open('http://muslimaid.org.au', '_system');                        
+//            window.open('http://muslimaid.org.au', '_system');                        
+var ref = window.open('http://local.muslimaid.org.au', '_blank', 'location=no,toolbar=no');
 //          window.location="https://www.muslimaid.org.au";
 //            window.open('https://www.muslimaid.org.au', '_self','location=no');
         }
