@@ -20,6 +20,23 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.addEventListener('deviceready', function () {
+          // Enable to debug issues.
+          // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+          
+          var notificationOpenedCallback = function(jsonData) {
+            console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+          };
+
+          window.plugins.OneSignal
+            .startInit("eb943e26-cb98-47aa-bdd2-a2a843adb945")
+            .handleNotificationOpened(notificationOpenedCallback)
+            .endInit();
+          
+          // Call syncHashedEmail anywhere in your app if you have the user's email.
+          // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
+          // window.plugins.OneSignal.syncHashedEmail(userEmail);
+        }, false);        
     },
 
     // deviceready Event Handler
@@ -32,6 +49,8 @@ var app = {
 //        this.receivedEvent('deviceready');
 //        this.launch("https://www.muslimaid.org.au");
     },
+
+
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {

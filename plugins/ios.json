@@ -21,6 +21,9 @@
         },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.eprosol.maa"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.eprosol.maa"
         }
     },
     "dependent_plugins": {}
